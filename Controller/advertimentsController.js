@@ -1,5 +1,5 @@
 const Advertisement = require("../Models/advertismentModel");
-const User = require("../models/usersModel");
+const User = require("../Models/userModel");
 
 const addAdvertisement = async (req, res) => {
   try {

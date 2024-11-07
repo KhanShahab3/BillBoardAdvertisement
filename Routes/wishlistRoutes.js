@@ -1,5 +1,5 @@
 const Router = require("express").Router();
-const wishlistController = require("../controllers/wishlistController");
+const wishlistController = require("../Controller/wishlistController");
 
 Router.post("/addtowishlist", wishlistController.addToWishList);
 Router.get("/mywishlist/:userId", wishlistController.myWishList);

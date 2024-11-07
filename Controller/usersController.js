@@ -1,12 +1,19 @@
-const User = require("../models/usersModel");
+const User = require("../Models/userModel");
 const bcrypt = require("bcrypt");
 const util = require("util");
 const compareAsync = util.promisify(bcrypt.compare);
 const generateToken = require("../Config/generateToken");
 
 const getUsers = async (req, res) => {
-  res.json("users");
+  try {
+    const users = await User.find(); // Fetch all users
+    res.json(users); // Return the users in the response
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).json({ msg: "Server Error" });
+  }
 };
+
 const userSignUp = async (req, res) => {
   try {
     const { name, email, phone, password } = req.body;

@@ -1,11 +1,21 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const { default: mongoose } = require("mongoose");
+const path = require("path");
+const usersRoutes = require("./Routes/usersRoutes");
+const advertisementRoutes = require("./Routes/advertismentsRoutes");
+const wishlistRoutes = require("./Routes/wishlistRoutes");
 
 const app = express();
 dotenv.config();
 
 const PORT = process.env.PORT || 5001;
+app.use(express.static(path.join(__dirname, "public")));
+
+app.use(express.json());
+app.use("/api", usersRoutes);
+app.use("/api", advertisementRoutes);
+app.use("/api", wishlistRoutes);
 
 const connectDb = async () => {
   try {

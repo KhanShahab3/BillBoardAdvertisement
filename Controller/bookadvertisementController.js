@@ -1,6 +1,6 @@
 const schedule = require("node-schedule");
 const Advertisement = require("../Models/advertismentModel");
-const User = require("../models/usersModel");
+const User = require("../Models/userModel");
 const BookingHistory = require("../Models/bookingModel");
 
 const bookAdvertisement = async (req, res) => {

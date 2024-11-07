@@ -1,7 +1,7 @@
 const upload = require("../middlewares/imageMiddleware");
 const Router = require("express").Router();
-const advertisementController = require("../controllers/advertimentsController");
-const bookAdvertisementController = require("../controllers/bookadvertisementController");
+const advertisementController = require("../Controller/advertimentsController");
+const bookAdvertisementController = require("../Controller/bookadvertisementController");
 const protect = require("../middlewares/authMiddleware");
 
 Router.post(
